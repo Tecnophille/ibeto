@@ -25,22 +25,36 @@ export function HeroCarousel() {
   }, [next]);
 
   return (
-    <section className="relative mt-[72px] overflow-hidden bg-brand-navy" aria-label="Featured highlights">
-      {heroSlides.map((s, i) => (
-        <div
-          key={s.id}
-          className={cn(
-            "absolute inset-0 transition-opacity duration-1000",
-            i === index ? "opacity-100" : "opacity-0"
-          )}
-          aria-hidden={i !== index}
-        >
-          <Image src={s.image} alt="" fill priority={i === 0} className="object-cover" sizes="100vw" />
-          <div className={cn("absolute inset-0 bg-gradient-to-r", s.gradient)} />
-        </div>
-      ))}
+    <section
+      className="relative isolate mt-[72px] min-h-[520px] overflow-hidden bg-brand-navy md:min-h-[600px] lg:mt-[104px]"
+      aria-label="Featured highlights"
+    >
+      {/* Background slides — contained in one absolute layer */}
+      <div className="absolute inset-0 z-0" aria-hidden>
+        {heroSlides.map((s, i) => (
+          <div
+            key={s.id}
+            className={cn(
+              "absolute inset-0 transition-opacity duration-1000",
+              i === index ? "opacity-100" : "pointer-events-none opacity-0"
+            )}
+          >
+            <div className="relative h-full w-full">
+              <Image
+                src={s.image}
+                alt=""
+                fill
+                priority={i <= 1}
+                className="object-cover"
+                sizes="100vw"
+              />
+            </div>
+            <div className={cn("absolute inset-0 bg-gradient-to-r", s.gradient)} />
+          </div>
+        ))}
+      </div>
 
-      <div className="container-corporate relative flex min-h-[520px] flex-col justify-center py-16 md:min-h-[600px] md:py-24">
+      <div className="container-corporate relative z-10 flex min-h-[520px] flex-col justify-center py-16 md:min-h-[600px] md:py-24">
         <div key={slide.id} className="max-w-3xl animate-fadeIn">
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-accent">
             {slide.eyebrow}

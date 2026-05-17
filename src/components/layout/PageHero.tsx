@@ -18,7 +18,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "relative mt-[72px] border-b border-brand-border",
+        "relative mt-[72px] border-b border-brand-border lg:mt-[104px]",
         variant === "green"
           ? "bg-gradient-to-br from-brand-primary to-brand-primaryDark"
           : "bg-brand-muted",
