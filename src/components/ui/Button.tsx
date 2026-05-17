@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 type ButtonProps = {
   href?: string;
-  variant?: "primary" | "secondary" | "ghost";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
   className?: string;
   children: React.ReactNode;
   type?: "button" | "submit";
@@ -12,10 +12,12 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-brand-gold text-brand-navy shadow-goldGlow hover:bg-white hover:text-brand-navy",
+    "bg-brand-primary text-white hover:bg-brand-primaryDark rounded-sm uppercase tracking-wide",
   secondary:
-    "border border-white/10 bg-white/5 text-white hover:border-brand-gold/30 hover:bg-white/10",
-  ghost: "text-brand-gold hover:text-white",
+    "bg-brand-accent text-white hover:bg-brand-accentDark rounded-sm uppercase tracking-wide",
+  outline:
+    "border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white rounded-sm",
+  ghost: "text-brand-primary hover:text-brand-primaryDark font-semibold",
 };
 
 export function Button({
@@ -27,7 +29,7 @@ export function Button({
   onClick,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-300",
+    "inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold transition-all duration-200",
     variants[variant],
     className
   );
