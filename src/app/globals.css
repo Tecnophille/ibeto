@@ -11,15 +11,27 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
   }
 
   body {
     font-family: var(--font-inter), system-ui, sans-serif;
     background-color: #ffffff;
     color: #1a2332;
-    overflow-x: hidden;
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
   }
+
+  main {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
 
   h1,
   h2,

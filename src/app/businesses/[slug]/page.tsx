@@ -27,8 +27,10 @@ export default function BusinessDetailPage({ params }: Props) {
 
   return (
     <>
-      <div className="relative mt-[72px] h-[360px] md:h-[420px]">
-        <Image src={sub.image} alt={sub.title} fill className="object-cover" priority sizes="100vw" />
+      <div className="relative mt-[72px] h-[360px] overflow-hidden md:h-[420px]">
+        <div className="relative h-full w-full">
+          <Image src={sub.image} alt={sub.title} fill className="object-cover" priority sizes="100vw" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 to-brand-navy/50" />
         <div className="container-corporate relative flex h-full flex-col justify-end pb-12">
           <Link

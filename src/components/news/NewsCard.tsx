@@ -13,7 +13,7 @@ export function NewsCard({ article, featured = false }: { article: NewsArticle; 
   if (featured) {
     return (
       <article className="card-corporate group overflow-hidden md:col-span-2 lg:grid lg:grid-cols-2 lg:items-stretch">
-        <div className="relative h-56 w-full shrink-0 overflow-hidden lg:h-auto lg:min-h-[260px]">
+        <div className="relative h-56 w-full shrink-0 overflow-hidden lg:min-h-[260px] lg:h-full">
           <Image
             src={article.image}
             alt=""

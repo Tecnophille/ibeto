@@ -29,8 +29,10 @@ export default function NewsArticlePage({ params }: Props) {
 
   return (
     <article>
-      <div className="relative mt-[72px] h-64 md:h-80">
-        <Image src={article.image} alt="" fill className="object-cover" priority sizes="100vw" />
+      <div className="relative mt-[72px] h-64 overflow-hidden md:h-80">
+        <div className="relative h-full w-full">
+          <Image src={article.image} alt="" fill className="object-cover" priority sizes="100vw" />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 to-transparent" />
       </div>
       <div className="container-corporate max-w-3xl py-12">

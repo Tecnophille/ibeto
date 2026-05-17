@@ -53,9 +53,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
-      <body className="flex min-h-screen flex-col overflow-x-hidden bg-white text-brand-text antialiased">
+      <body className="flex min-h-dvh flex-col bg-white text-brand-text antialiased">
         <SiteHeader />
-        <main className="flex-1 overflow-x-hidden">{children}</main>
+        <main className="min-h-0 w-full max-w-full flex-1 overflow-x-clip">{children}</main>
         <SiteFooter />
       </body>
     </html>
