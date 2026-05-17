@@ -2,35 +2,41 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { NewsArticle } from "@/lib/data/news";
 
-export function NewsCard({ article }: { article: NewsArticle }) {
+const categoryColors: Record<string, string> = {
+  Corporate: "bg-brand-navy",
+  Cement: "bg-amber-700",
+  Petrochemicals: "bg-blue-700",
+  CSR: "bg-brand-primary",
+};
+
+export function NewsCard({ article, featured = false }: { article: NewsArticle; featured?: boolean }) {
   const date = new Date(article.date).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
+  const barColor = categoryColors[article.category] ?? "bg-brand-navy";
 
   return (
-    <article className="glass-panel group flex flex-col justify-between rounded-2xl border border-white/5 p-6 transition-all hover:border-brand-gold/20">
-      <div>
-        <div className="mb-3 flex items-center gap-3">
-          <span className="rounded-full border border-white/10 bg-brand-dark/50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-gold">
+    <article className={featured ? "card-corporate overflow-hidden md:col-span-2 md:grid md:grid-cols-2" : "card-corporate overflow-hidden"}>
+      <div className={`${barColor} ${featured ? "min-h-[200px] md:min-h-full" : "h-40"}`} />
+      <div className="flex flex-col p-6">
+        <motionless className="mb-3 flex items-center gap-3">
+          <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
             {article.category}
           </span>
-          <time className="text-xs text-slate-500" dateTime={article.date}>
+          <time className="text-xs text-brand-textMuted" dateTime={article.date}>
             {date}
           </time>
-        </div>
-        <h3 className="font-display text-lg font-bold text-white transition-colors group-hover:text-brand-gold">
+        </motionless>
+        <h3 className={`font-display font-bold text-brand-text ${featured ? "text-2xl" : "text-lg"}`}>
           {article.title}
         </h3>
-        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-slate-400">{article.excerpt}</p>
+        <p className="mt-2 line-clamp-3 flex-1 text-sm text-brand-textMuted">{article.excerpt}</p>
+        <Link href={`/news/${article.slug}`} className="link-arrow mt-4">
+          Read more <ArrowRight size={16} />
+        </Link>
       </div>
-      <Link
-        href={`/news/${article.slug}`}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-brand-gold hover:text-white"
-      >
-        Read more <ArrowRight size={16} />
-      </Link>
     </article>
   );
 }

@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { BackgroundGlows } from "@/components/layout/BackgroundGlows";
 import "./globals.css";
 
 const inter = Inter({
@@ -50,13 +49,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
-      <body className="min-h-screen overflow-x-hidden bg-brand-dark text-slate-100 antialiased selection:bg-brand-gold selection:text-brand-navy">
-        <div className="relative min-h-screen">
-          <BackgroundGlows />
-          <SiteHeader />
-          <main className="relative z-10">{children}</main>
-          <SiteFooter />
-        </div>
+      <body className="min-h-screen bg-white text-brand-text antialiased">
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

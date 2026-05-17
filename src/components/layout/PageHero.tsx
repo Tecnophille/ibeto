@@ -5,27 +5,52 @@ type PageHeroProps = {
   title: string;
   description?: string;
   className?: string;
+  variant?: "default" | "green";
 };
 
-export function PageHero({ eyebrow, title, description, className }: PageHeroProps) {
+export function PageHero({
+  eyebrow,
+  title,
+  description,
+  className,
+  variant = "default",
+}: PageHeroProps) {
   return (
     <section
       className={cn(
-        "relative border-b border-white/5 pt-32 pb-16 md:pt-40 md:pb-20",
+        "relative mt-[72px] border-b border-brand-border",
+        variant === "green"
+          ? "bg-gradient-to-br from-brand-primary to-brand-primaryDark"
+          : "bg-brand-muted",
         className
       )}
     >
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="container-corporate py-14 md:py-20">
         {eyebrow && (
-          <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-brand-gold">
+          <span
+            className={cn(
+              "mb-3 inline-block text-sm font-bold uppercase tracking-widest",
+              variant === "green" ? "text-brand-accent" : "text-brand-primary"
+            )}
+          >
             {eyebrow}
           </span>
         )}
-        <h1 className="font-display text-4xl font-black uppercase leading-tight text-white sm:text-5xl md:text-6xl">
+        <h1
+          className={cn(
+            "font-display text-4xl font-bold leading-tight md:text-5xl",
+            variant === "green" ? "text-white" : "text-brand-navy"
+          )}
+        >
           {title}
         </h1>
         {description && (
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+          <p
+            className={cn(
+              "mt-4 max-w-2xl text-lg leading-relaxed",
+              variant === "green" ? "text-white/90" : "text-brand-textMuted"
+            )}
+          >
             {description}
           </p>
         )}

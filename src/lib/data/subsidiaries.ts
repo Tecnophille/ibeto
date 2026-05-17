@@ -189,8 +189,8 @@ export function getSubsidiary(slug: string): Subsidiary | undefined {
 }
 
 export const homeStats = [
-  { value: "60k+", label: "MT Petrochemical Tankage", accent: "text-brand-gold" },
-  { value: "100%", label: "Indigenous Quality", accent: "text-blue-400" },
-  { value: "25+", label: "Years Industrial Heritage", accent: "text-emerald-400" },
-  { value: "6", label: "Core Industrial Divisions", accent: "text-purple-400" },
+  { value: "60k+", label: "MT Petrochemical Tankage" },
+  { value: "6", label: "Core Industrial Divisions" },
+  { value: "25+", label: "Years of Operations" },
+  { value: "4", label: "Regional Office Locations" },
 ] as const;
