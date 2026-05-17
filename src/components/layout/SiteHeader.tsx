@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { mainNav } from "@/lib/data/navigation";
 import { subsidiaries } from "@/lib/data/subsidiaries";
+import { IbetoLogo } from "@/components/layout/IbetoLogo";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -33,19 +34,7 @@ export function SiteHeader() {
       </div>
 
       <div className="container-corporate flex h-[72px] items-center justify-between">
-        <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <div className="flex h-11 w-11 items-center justify-center rounded bg-brand-primary">
-            <span className="font-display text-lg font-bold text-white">IG</span>
-          </div>
-          <div className="hidden sm:flex flex-col">
-            <span className="font-display text-lg font-bold leading-none text-brand-navy">
-              IBETO GROUP
-            </span>
-            <span className="text-[10px] font-semibold uppercase tracking-widest text-brand-textMuted">
-              Industries Limited
-            </span>
-          </div>
-        </Link>
+        <IbetoLogo variant="header" onClick={() => setOpen(false)} />
 
         <nav className="hidden items-center gap-1 xl:flex" aria-label="Main navigation">
           {mainNav.map((item) => {

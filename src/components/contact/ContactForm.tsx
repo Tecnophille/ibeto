@@ -13,55 +13,40 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="glass-panel rounded-3xl border border-brand-gold/20 bg-brand-navy/20 p-8 text-center">
-        <p className="font-display text-lg font-bold text-white">Thank you for your inquiry</p>
-        <p className="mt-2 text-sm text-slate-400">
+      <div className="card-corporate border-brand-primary/20 p-8 text-center">
+        <p className="font-display text-lg font-bold text-brand-navy">Thank you for your inquiry</p>
+        <p className="mt-2 text-sm text-brand-textMuted">
           Our corporate relations team will respond within two business days.
         </p>
       </div>
     );
   }
 
+  const inputClass =
+    "w-full rounded border border-brand-border bg-white px-4 py-3 text-sm text-brand-text focus:border-brand-primary focus:outline-none focus:ring-1 focus:ring-brand-primary";
+
   return (
-    <div className="glass-panel relative rounded-3xl border border-white/10 bg-brand-navy/20 p-8 shadow-xl">
-      <h3 className="mb-6 font-display text-lg font-bold text-white">Submit an Enterprise Inquiry</h3>
+    <div className="card-corporate p-8">
+      <h3 className="mb-6 font-display text-lg font-bold text-brand-navy">Submit an Enterprise Inquiry</h3>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="company" className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-400">
-            Corporate Name / Entity
+          <label htmlFor="company" className="mb-1 block text-xs font-bold uppercase text-brand-textMuted">
+            Corporate Name
           </label>
-          <input
-            id="company"
-            name="company"
-            type="text"
-            required
-            placeholder="Your company name"
-            className="w-full rounded-lg border border-white/10 bg-brand-dark px-4 py-3 text-sm text-white transition-colors focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-          />
+          <input id="company" name="company" type="text" required className={inputClass} />
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <label htmlFor="email" className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-400">
+            <label htmlFor="email" className="mb-1 block text-xs font-bold uppercase text-brand-textMuted">
               Business Email
             </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              required
-              placeholder="you@company.com"
-              className="w-full rounded-lg border border-white/10 bg-brand-dark px-4 py-3 text-sm text-white transition-colors focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-            />
+            <input id="email" name="email" type="email" required className={inputClass} />
           </div>
           <div>
-            <label htmlFor="division" className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-400">
+            <label htmlFor="division" className="mb-1 block text-xs font-bold uppercase text-brand-textMuted">
               Division
             </label>
-            <select
-              id="division"
-              name="division"
-              className="w-full rounded-lg border border-white/10 bg-brand-dark px-4 py-3 text-sm text-slate-300 transition-colors focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-            >
+            <select id="division" name="division" className={inputClass}>
               <option value="general">General Inquiry</option>
               {subsidiaries.map((s) => (
                 <option key={s.slug} value={s.slug}>
@@ -72,34 +57,20 @@ export function ContactForm() {
           </div>
         </div>
         <div>
-          <label htmlFor="phone" className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-400">
+          <label htmlFor="phone" className="mb-1 block text-xs font-bold uppercase text-brand-textMuted">
             Telephone
           </label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            required
-            placeholder="+234 ..."
-            className="w-full rounded-lg border border-white/10 bg-brand-dark px-4 py-3 text-sm text-white transition-colors focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-          />
+          <input id="phone" name="phone" type="tel" required className={inputClass} />
         </div>
         <div>
-          <label htmlFor="message" className="mb-1 block text-xs font-bold uppercase tracking-wider text-slate-400">
+          <label htmlFor="message" className="mb-1 block text-xs font-bold uppercase text-brand-textMuted">
             Message
           </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            required
-            placeholder="Describe your inquiry..."
-            className="w-full resize-none rounded-lg border border-white/10 bg-brand-dark px-4 py-3 text-sm text-white transition-colors focus:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold"
-          />
+          <textarea id="message" name="message" rows={4} required className={`${inputClass} resize-none`} />
         </div>
         <button
           type="submit"
-          className="w-full rounded-lg bg-brand-gold py-3.5 text-sm font-bold uppercase tracking-wider text-brand-navy shadow-goldGlow transition-colors duration-300 hover:bg-white"
+          className="w-full rounded-sm bg-brand-primary py-3.5 text-sm font-bold uppercase tracking-wide text-white hover:bg-brand-primaryDark"
         >
           Submit Request
         </button>

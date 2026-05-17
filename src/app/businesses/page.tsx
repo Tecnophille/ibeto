@@ -5,8 +5,7 @@ import { subsidiaries } from "@/lib/data/subsidiaries";
 
 export const metadata: Metadata = {
   title: "Businesses",
-  description:
-    "Explore The Ibeto Group's operating divisions — petrochemicals, cement, automotive, hospitality, properties, and oil & gas.",
+  description: "Explore The Ibeto Group's operating divisions.",
 };
 
 export default function BusinessesPage() {
@@ -15,15 +14,13 @@ export default function BusinessesPage() {
       <PageHero
         eyebrow="Our Businesses"
         title="Six Sectors, One Vision"
-        description="As a diversified conglomerate, our interests across multiple industries reflect our commitment to fulfilling essential needs for Nigeria and beyond."
+        description="As a diversified conglomerate, our interests across multiple industries reflect our commitment to fulfilling essential needs."
       />
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {subsidiaries.map((sub) => (
-              <BusinessCard key={sub.slug} sub={sub} />
-            ))}
-          </div>
+      <section className="section-padding">
+        <div className="container-corporate grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {subsidiaries.map((sub) => (
+            <BusinessCard key={sub.slug} sub={sub} />
+          ))}
         </div>
       </section>
     </>

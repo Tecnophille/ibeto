@@ -38,6 +38,10 @@ export const metadata: Metadata = {
     locale: "en_NG",
     siteName: "The Ibeto Group",
   },
+  icons: {
+    icon: "/ibeto-logo.png",
+    apple: "/ibeto-logo.png",
+  },
 };
 
 export const viewport: Viewport = {

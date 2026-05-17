@@ -7,6 +7,7 @@ import {
   Building2,
   Flame,
 } from "lucide-react";
+import { images } from "./images";
 
 export type Subsidiary = {
   slug: string;
@@ -15,6 +16,7 @@ export type Subsidiary = {
   tagline: string;
   desc: string;
   longDesc: string;
+  image: string;
   icon: LucideIcon;
   badge: string;
   color: string;
@@ -28,6 +30,7 @@ export type Subsidiary = {
 export const subsidiaries: Subsidiary[] = [
   {
     slug: "petrochemicals",
+    image: images.sectors.petrochemicals,
     title: "Ibeto Petrochemical Industries",
     shortTitle: "Petrochemicals",
     tagline: "Expresso Lubricants & Petroleum Storage",
@@ -54,6 +57,7 @@ export const subsidiaries: Subsidiary[] = [
   },
   {
     slug: "cement",
+    image: images.sectors.cement,
     title: "Ibeto Cement Company",
     shortTitle: "Cement",
     tagline: "Building Africa's Infrastructure",
@@ -80,6 +84,7 @@ export const subsidiaries: Subsidiary[] = [
   },
   {
     slug: "automotive",
+    image: images.sectors.automotive,
     title: "Union Autoparts Manufacturing",
     shortTitle: "Automotive",
     tagline: "Automotive Parts & Union Batteries",
@@ -106,6 +111,7 @@ export const subsidiaries: Subsidiary[] = [
   },
   {
     slug: "hospitality",
+    image: images.sectors.hospitality,
     title: "Ibeto Hospitality & Hotels",
     shortTitle: "Hospitality",
     tagline: "Premium Luxury & Leisure Services",
@@ -132,6 +138,7 @@ export const subsidiaries: Subsidiary[] = [
   },
   {
     slug: "properties",
+    image: images.sectors.properties,
     title: "Ibeto Properties & Real Estate",
     shortTitle: "Properties",
     tagline: "Strategic Development & Assets",
@@ -158,6 +165,7 @@ export const subsidiaries: Subsidiary[] = [
   },
   {
     slug: "oil-gas",
+    image: images.sectors["oil-gas"],
     title: "Ibeto Oil & Gas Trading",
     shortTitle: "Oil & Gas",
     tagline: "Downstream Energy Solutions",

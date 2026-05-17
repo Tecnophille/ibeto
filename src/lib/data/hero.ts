@@ -1,9 +1,12 @@
+import { images } from "./images";
+
 export type HeroSlide = {
   id: string;
   eyebrow: string;
   title: string;
   description: string;
   cta: { label: string; href: string };
+  image: string;
   gradient: string;
 };
 
@@ -15,7 +18,8 @@ export const heroSlides: HeroSlide[] = [
     description:
       "A diversified conglomerate delivering quality products and prompt services across petrochemicals, cement, automotive, hospitality, and energy.",
     cta: { label: "Explore Our Businesses", href: "/businesses" },
-    gradient: "from-brand-navy via-brand-navyLight to-brand-primaryDark",
+    image: images.hero.industrial,
+    gradient: "from-brand-navy/90 via-brand-navy/70 to-brand-primary/80",
   },
   {
     id: "petrochemicals",
@@ -24,7 +28,8 @@ export const heroSlides: HeroSlide[] = [
     description:
       "Expresso blended oils from Nnewi and 60,000+ metric tonnes of petroleum liquid storage at Apapa Wharf, Lagos.",
     cta: { label: "Petrochemicals Division", href: "/businesses/petrochemicals" },
-    gradient: "from-slate-800 via-blue-900 to-brand-navy",
+    image: images.hero.petrochemicals,
+    gradient: "from-slate-900/90 via-blue-900/70 to-brand-navy/80",
   },
   {
     id: "cement",
@@ -33,7 +38,8 @@ export const heroSlides: HeroSlide[] = [
     description:
       "Modern cement bagging at Bundu Ama, Port Harcourt, with backward integration at Nigercem, Nkalagu.",
     cta: { label: "Cement Division", href: "/businesses/cement" },
-    gradient: "from-stone-700 via-amber-900 to-brand-accentDark",
+    image: images.hero.cement,
+    gradient: "from-stone-900/90 via-amber-900/60 to-brand-navy/70",
   },
   {
     id: "sustainability",
@@ -42,6 +48,7 @@ export const heroSlides: HeroSlide[] = [
     description:
       "We create ventures that serve stakeholders, host communities, and Nigeria's long-term industrial self-sufficiency.",
     cta: { label: "Our Sustainability Approach", href: "/sustainability" },
-    gradient: "from-brand-primaryDark via-brand-primary to-emerald-800",
+    image: images.hero.sustainability,
+    gradient: "from-brand-primaryDark/90 via-brand-primary/70 to-emerald-900/80",
   },
 ];

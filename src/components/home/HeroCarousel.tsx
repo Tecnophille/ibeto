@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import { heroSlides } from "@/lib/data/hero";
@@ -24,21 +25,22 @@ export function HeroCarousel() {
   }, [next]);
 
   return (
-    <section className="relative mt-20 overflow-hidden bg-brand-navy" aria-label="Featured highlights">
-      <div
-        className={cn(
-          "absolute inset-0 bg-gradient-to-br transition-all duration-700",
-          slide.gradient
-        )}
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-10"
-        aria-hidden
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" aria-hidden />
+    <section className="relative mt-[72px] overflow-hidden bg-brand-navy" aria-label="Featured highlights">
+      {heroSlides.map((s, i) => (
+        <div
+          key={s.id}
+          className={cn(
+            "absolute inset-0 transition-opacity duration-1000",
+            i === index ? "opacity-100" : "opacity-0"
+          )}
+          aria-hidden={i !== index}
+        >
+          <Image src={s.image} alt="" fill priority={i === 0} className="object-cover" sizes="100vw" />
+          <div className={cn("absolute inset-0 bg-gradient-to-r", s.gradient)} />
+        </div>
+      ))}
 
-      <div className="container-corporate relative flex min-h-[520px] flex-col justify-center py-16 md:min-h-[580px] md:py-20">
+      <div className="container-corporate relative flex min-h-[520px] flex-col justify-center py-16 md:min-h-[600px] md:py-24">
         <div key={slide.id} className="max-w-3xl animate-fadeIn">
           <p className="mb-3 text-sm font-bold uppercase tracking-widest text-brand-accent">
             {slide.eyebrow}
@@ -46,9 +48,7 @@ export function HeroCarousel() {
           <h1 className="font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
             {slide.title}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
-            {slide.description}
-          </p>
+          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">{slide.description}</p>
           <Link
             href={slide.cta.href}
             className="mt-8 inline-flex items-center gap-2 rounded-sm bg-brand-accent px-8 py-3.5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-brand-accentDark"
@@ -62,22 +62,22 @@ export function HeroCarousel() {
           <button
             type="button"
             onClick={prev}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/20 text-white backdrop-blur transition-colors hover:bg-black/40"
             aria-label="Previous slide"
           >
-            <ChevronLeft size={20} />
+            <ChevronLeft size={22} />
           </button>
           <button
             type="button"
             onClick={next}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-white/30 bg-black/20 text-white backdrop-blur transition-colors hover:bg-black/40"
             aria-label="Next slide"
           >
-            <ChevronRight size={20} />
+            <ChevronRight size={22} />
           </button>
         </div>
 
-        <div className="mt-10 flex gap-2 md:absolute md:bottom-8 md:left-4 md:mt-0 lg:left-8">
+        <div className="mt-10 flex gap-2 md:absolute md:bottom-8 md:left-0 md:mt-0">
           {heroSlides.map((s, i) => (
             <button
               key={s.id}

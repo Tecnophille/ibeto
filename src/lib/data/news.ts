@@ -1,3 +1,5 @@
+import { images } from "./images";
+
 export type NewsArticle = {
   slug: string;
   title: string;
@@ -5,6 +7,7 @@ export type NewsArticle = {
   body: string;
   date: string;
   category: "Corporate" | "Cement" | "Petrochemicals" | "CSR";
+  image: string;
 };
 
 export const newsArticles: NewsArticle[] = [
@@ -16,6 +19,7 @@ export const newsArticles: NewsArticle[] = [
     body: "Ibeto Cement Company Ltd. has reinforced operations at its Bundu Ama terminal in Port Harcourt, ensuring reliable supply of bagged cement to contractors and distributors serving major infrastructure programmes across southern Nigeria.",
     date: "2026-03-12",
     category: "Cement",
+    image: images.news.cement,
   },
   {
     slug: "expresso-product-range",
@@ -25,6 +29,7 @@ export const newsArticles: NewsArticle[] = [
     body: "Ibeto Petrochemical Industries Limited has expanded the Expresso lubricants range, adding formulations engineered for heavy industrial equipment and commercial fleet operators seeking locally manufactured, high-performance oils.",
     date: "2026-02-28",
     category: "Petrochemicals",
+    image: images.news.petrochemicals,
   },
   {
     slug: "community-education-initiative",
@@ -34,6 +39,7 @@ export const newsArticles: NewsArticle[] = [
     body: "The Ibeto Group continues its commitment to host communities through education support programmes, scholarships, and infrastructure improvements aligned with our long-standing corporate social responsibility framework.",
     date: "2026-01-15",
     category: "CSR",
+    image: images.news.csr,
   },
   {
     slug: "union-batteries-export-growth",
@@ -43,6 +49,7 @@ export const newsArticles: NewsArticle[] = [
     body: "Union Autoparts Manufacturing Co. Ltd. reports increased demand for Union Batteries from distributors across West Africa, reflecting confidence in Nigerian-made automotive components meeting international quality benchmarks.",
     date: "2025-11-20",
     category: "Corporate",
+    image: images.news.default,
   },
 ];
 

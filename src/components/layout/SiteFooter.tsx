@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { IbetoLogo } from "@/components/layout/IbetoLogo";
 import { footerNav } from "@/lib/data/navigation";
 
 export function SiteFooter() {
@@ -9,16 +10,29 @@ export function SiteFooter() {
     <footer className="bg-brand-navy text-white">
       <div className="container-corporate grid grid-cols-1 gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded bg-brand-primary">
-              <span className="font-display font-bold">IG</span>
-            </div>
-            <span className="font-display text-lg font-bold">IBETO GROUP</span>
-          </Link>
+          <IbetoLogo variant="footer" />
           <p className="mt-4 text-sm leading-relaxed text-white/70">
             A leading Nigerian industrial conglomerate — cement, petrochemicals, automotive,
             hospitality, real estate, and oil &amp; gas.
           </p>
+          <div className="mt-4 flex gap-4 text-sm">
+            <a
+              href="https://instagram.com/@ibetogroup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-brand-accent"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://facebook.com/reel/1578070599878114"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 hover:text-brand-accent"
+            >
+              Facebook
+            </a>
+          </div>
         </div>
 
         <div>
