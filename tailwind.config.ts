@@ -10,9 +10,10 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          primary: "#0B6B3A",
-          primaryDark: "#064A28",
-          primaryLight: "#E8F5EE",
+          /* Logo sphere blue (mid-tone) + shadow/highlight from ibeto-logo.png */
+          primary: "#1A6FBD",
+          primaryDark: "#0E4A85",
+          primaryLight: "#E9F3FC",
           accent: "#C8952E",
           accentDark: "#9A7322",
           navy: "#0F2744",

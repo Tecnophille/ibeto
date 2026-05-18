@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        variant="green"
+        variant="brand"
         eyebrow="About the Group"
         title="Heritage, Integrity & Industrial Scale"
         description={tagline}

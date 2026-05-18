@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        variant="green"
+        variant="brand"
         eyebrow="Contact Us"
         title="Corporate Directory"
         description="Reach our head office, liaison offices, and division-specific teams."

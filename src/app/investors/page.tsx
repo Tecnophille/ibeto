@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function InvestorsPage() {
   return (
     <>
-      <PageHero variant="green" eyebrow="Investor Relations" title="Governance & Transparency" />
+      <PageHero variant="brand" eyebrow="Investor Relations" title="Governance & Transparency" />
       <section className="section-padding">
         <div className="container-corporate grid gap-12 lg:grid-cols-2">
           <div>

@@ -5,7 +5,7 @@ type PageHeroProps = {
   title: string;
   description?: string;
   className?: string;
-  variant?: "default" | "green";
+  variant?: "default" | "brand";
 };
 
 export function PageHero({
@@ -30,7 +30,7 @@ export function PageHero({
           <span
             className={cn(
               "mb-3 inline-block text-sm font-bold uppercase tracking-widest",
-              variant === "green" ? "text-brand-accent" : "text-brand-primary"
+              variant === "brand" ? "text-brand-accent" : "text-brand-primary"
             )}
           >
             {eyebrow}
@@ -39,7 +39,7 @@ export function PageHero({
         <h1
           className={cn(
             "font-display text-4xl font-bold leading-tight md:text-5xl",
-            variant === "green" ? "text-white" : "text-brand-navy"
+            variant === "brand" ? "text-white" : "text-brand-navy"
           )}
         >
           {title}
@@ -48,7 +48,7 @@ export function PageHero({
           <p
             className={cn(
               "mt-4 max-w-2xl text-lg leading-relaxed",
-              variant === "green" ? "text-white/90" : "text-brand-textMuted"
+              variant === "brand" ? "text-white/90" : "text-brand-textMuted"
             )}
           >
             {description}

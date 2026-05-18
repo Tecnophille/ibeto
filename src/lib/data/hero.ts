@@ -49,6 +49,6 @@ export const heroSlides: HeroSlide[] = [
       "We create ventures that serve stakeholders, host communities, and Nigeria's long-term industrial self-sufficiency.",
     cta: { label: "Our Sustainability Approach", href: "/sustainability" },
     image: images.hero.sustainability,
-    gradient: "from-brand-primaryDark/90 via-brand-primary/70 to-emerald-900/80",
+    gradient: "from-brand-primaryDark/90 via-brand-primary/70 to-blue-900/80",
   },
 ];

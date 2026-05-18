@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function SustainabilityPage() {
   return (
     <>
-      <PageHero variant="green" eyebrow="Sustainability" title="Building Prosperity Responsibly" />
+      <PageHero variant="brand" eyebrow="Sustainability" title="Building Prosperity Responsibly" />
       <section className="border-b border-brand-border bg-brand-muted py-12">
         <div className="container-corporate grid grid-cols-2 gap-8 md:grid-cols-4">
           {impactMetrics.map((m) => (
